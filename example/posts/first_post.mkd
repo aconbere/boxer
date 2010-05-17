@@ -1,0 +1,5 @@
+title: "first post"
+template: "post.html"
+published: "2010-05-16"
+
+This is the first post using boxer. So far this seems to be working pretty well.
