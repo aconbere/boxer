@@ -6,6 +6,14 @@ var fs = require("../lib/_fs");
 
 minitest.setupListeners();
 
+minitest.context("_fs#mkdirs", function () {
+  this.assertion("it should make all the directories in the tree", function (test) {
+    fs.mkdirs("/home/aconbere/Projects/javascript/boxer/test", 0755, function(err) {
+    });
+    test.finished();
+  });
+});
+
 minitest.context("_fs#walk", function () {
   this.assertion("it should call \"callback\" for ever file in the tree", function (test) {
     fs.walk("/home/aconbere/Projects/javascript", function(start, dirs, names) {
