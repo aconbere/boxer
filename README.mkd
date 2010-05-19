@@ -1,0 +1,5 @@
+Boxer is a static site publisher
+
+it's really early stage right now, to use it:
+
+    $ node boxer.js -i [Input Dir] -o [Output Dir]
