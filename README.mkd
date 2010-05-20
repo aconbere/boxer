@@ -1,5 +1,22 @@
-Boxer is a static site publisher
+# Boxer #
 
-it's really early stage right now, to use it:
+Boxer is a static site publisher.
 
-    $ node boxer.js -i [Input Dir] -o [Output Dir]
+
+## Running Boxer ##
+
+    $ boxer [-vh] input output
+
+## What is a static site publisher? ##
+
+By now lots of people are familiar with the notion of a static blog publishing tool, popularized by tools like jekyll. I think that they're far and away the easiest, most robust means of publishing content in the modern era. In particular when coupled with support tools like GIT or HG. But I kept finding times when what I wanted was not easily stuck into the idea of a blog. Instead I wanted to publish static sites.
+
+For example, I wanted my site to publish my resume, a list of projects, and a landing page. But accomplishing that with the current set of tools proved difficult. Boxer imparts few if any of those restritions on you.
+
+## How Boxer Works ##
+
+Boxer works by first collecting all the files in the input directory, processing them and storing them for later. It takes hints from the directory structure to add metadata to those files. For instance all files in the directory _templates will be tagged with "templates". This allows us to generalize many of the special cases used in other blog publishers.
+
+For example, since we're no longer singularly focused on posts, all files can be transformed in boxer, css, js, or the templates themselves can be manipulated before mapping begins.
+
+now this documentation is getting crazy... so I'm going to try again later.
