@@ -1,0 +1,20 @@
+{ "name" : "boxer"
+, "description" : "A Static Website Publishing Tool"
+, "version" : "0.0.1"
+, "author" : "Anders Conbere <aconberei@conbere.org>"
+, "repository" :
+  { "type" : "git"
+  , "url" : "http://github.com/aconbere/boxer.git"
+  }
+, "bugs" :
+  { "mail" : "npm-@googlegroups.com"
+  , "web" : "http://github.com/aconbere/boxer/issues"
+  }
+, "os" : [ "linux", "darwin", "freebsd" ]
+, "directories" : { "lib" : "./lib/" }
+, "main" : "./lib/boxer"
+, "bin" : { "boxer" : "./bin/boxer.js" }
+, "engines" : { "node" : ">=0.1.93" }
+, "licenses" :
+  [ { "type" : "MIT" } ]
+}
