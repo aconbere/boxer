@@ -9,5 +9,6 @@ var outputHandlers = require("./output_handlers");
 var Collector = require('../lib/collector').Collector;
 
 var collector = new Collector(options.input, options.output,
-                              inputHandlers, outputHandlers);
+                              inputHandlers, outputHandlers,
+                              options);
 collector.run();
