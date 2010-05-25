@@ -1,6 +1,6 @@
 { "name" : "boxer"
 , "description" : "A Static Website Publishing Tool"
-, "version" : "0.0.1"
+, "version" : "0.0.2"
 , "author" : "Anders Conbere <aconberei@conbere.org>"
 , "repository" :
   { "type" : "git"
