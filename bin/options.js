@@ -14,9 +14,13 @@ var switches = [ ['-h', '--help', 'Shows help sections']
 
 var parser = new optparse.OptionParser(switches);
 var banner = 'boxer input output [-vh]';
+var description =
+"Boxer is a tool to transform text files from one directory to another.\n" +
+"It provides a set of simple pieces to collect, and process files, with\n" +
+"reasonable defaults for what filters to apply based on directory names";
 
 parser.on('help', function() {
-  sys.p(banner);
+  sys.puts(banner + "\n\n" + description);
   process.exit();
 });
 
@@ -42,7 +46,7 @@ parser.on('verbose', function() {
 parser.parse(process.argv);
 
 if (!options.input || !options.output) {
-  sys.puts("both input and output must be given\n" + banner);
+  sys.puts(banner);
   process.exit();
 }
 

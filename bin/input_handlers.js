@@ -2,17 +2,29 @@ var path = require('path');
 var sys = require('sys');
 var mustache = require("mustache");
 
-exports.templates = function (template) {
-  template.outputPath = false;
-  template.render = function (context) {
+// Takes an Item from the input chain and renders it's body
+// as mustache
+exports.templates = function (item) {
+  // don't publish templates
+  item.publish = false;
+
+  // we create the item.render method such that instead of
+  // handing back just the item body, we first parse it as mustache
+  // and transform the contents.
+  item.render = function (context) {
+    // context is any extra details passed through the item
+    // options etc.
     return mustache.to_html(this.body, context);
   };
-  return template;
+
+  // it returns back an item not transformed
+  return item;
 }
 
 exports.posts = function (post) {
   var published;
 
+  // if the headers include a published date to override the current time
   if (post.headers.published) {
     var args = post.headers.published.split(/[-: ]/);
     if (args.length >= 3) {
@@ -24,7 +36,6 @@ exports.posts = function (post) {
     published = new Date();
   }
 
-  post.ext = path.extname(post.filePath);
   post.basename= path.basename(post.filePath, post.ext);
   post.outputPath = "posts/" + published.getFullYear() + "/"
                              + published.getMonth() + "/"

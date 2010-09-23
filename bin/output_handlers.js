@@ -6,15 +6,14 @@ var markup = {};
 markup[".mkd"] = function (body) {
   return markdown.parse(body);
 };
-  
 
-exports.posts = function (post, collector) {
-  if (markup[post.ext]) {
-    post.body = markup[post.ext](post.body);
+exports.posts = function (item, collector) {
+  if (markup[item.ext]) {
+    item.body = markup[item.ext](item.body);
   }
 
-  collector.context.post = post.context();
-  return post;
+  collector.context.post = item.context();
+  return item;
 };
 
 exports.postProcessing = function (item, collector) {

@@ -1,7 +1,7 @@
 var assert = require("assert");
 var sys = require("sys");
 
-var minitest = require("../vendor/minitest.js/minitest");
+var minitest = require("minitest");
 
 var item = require("../lib/item");
 

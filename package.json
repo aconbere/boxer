@@ -1,6 +1,6 @@
 { "name" : "boxer"
 , "description" : "A Static Website Publishing Tool"
-, "version" : "0.0.3"
+, "version" : "0.0.4"
 , "author" : "Anders Conbere <aconbere@conbere.org>"
 , "repository" : { "type" : "git"
                  , "url" : "http://github.com/aconbere/boxer.git"
@@ -13,9 +13,9 @@
 , "engines" : { "node" : ">=0.1.93" }
 , "licenses" : [ { "type" : "MIT" } ]
 , "dependencies": { "optparse": "1.0.1"
-                  , "file": "0.1.0"
+                  , "file": "0.1.1"
                   , "yaml": "0.1.0"
-                  , "markdown": "0.1.0"
-                  , "mustache": "0.2.3"
+                  , "markdown": "0.1.2"
+                  , "mustache": "0.3.1-dev"
                   }
 }
