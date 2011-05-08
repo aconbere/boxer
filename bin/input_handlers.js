@@ -2,8 +2,9 @@ var path = require('path');
 var sys = require('sys');
 var mustache = require("mustache");
 
-// Takes an Item from the input chain and renders it's body
-// as mustache
+// Takes an Item from the input chain and adds a render function
+// which takes the body of the item and renders it as a mustache
+// template.
 exports.templates = function (item) {
   // don't publish templates
   item.publish = false;
