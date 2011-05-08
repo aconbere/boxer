@@ -15,8 +15,21 @@ For example, I wanted my site to publish my resume, a list of projects, and a la
 
 ## How Boxer Works ##
 
-Boxer works by first collecting all the files in the input directory, processing them and storing them for later. It takes hints from the directory structure to add metadata to those files. For instance all files in the directory _templates will be tagged with "templates". This allows us to generalize many of the special cases used in other blog publishers.
+    source
 
-For example, since we're no longer singularly focused on posts, all files can be transformed in boxer, css, js, or the templates themselves can be manipulated before mapping begins.
+      |
+      V
 
-now this documentation is getting crazy... so I'm going to try again later.
+    Collection: files -> input_handlers -> items
+
+      |
+      V
+
+    Processing: preProcessing -> output_handlers -> postProcessing -> items
+
+      |
+      V
+
+    Publishing: items -> files
+
+Boxer works by first collecting all the files in the input directory, processing them and storing them for later. It takes hints from the directory structure to add metadata to those files. For instance all files in the directory _templates will be tagged with "templates". This allows us to generalize many of the special cases used in other blog publishers. An interesting side effect of this is that with boxer, all files can be transformed; css, js, or the templates themselves can be manipulated before mapping begins.
