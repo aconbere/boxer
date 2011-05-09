@@ -11,11 +11,10 @@ exports.posts = function (item, collector) {
   if (markup[item.ext]) {
     item.body = markup[item.ext](item.body);
   }
-
-  collector.context.post = item.context();
   return item;
 };
 
+// happens after all files are done being collected
 exports.postProcessing = function (item, collector) {
   if (item.headers.template) {
     var templates = collector.findByRelPath("_templates/" + item.headers.template);

@@ -1,7 +1,7 @@
 var sys = require('sys');
 var path = require('path');
 var optparse = require('optparse');
-var file = require('file/main');
+var file = require('file');
 
 var options = { "input": null
               , "output": null
