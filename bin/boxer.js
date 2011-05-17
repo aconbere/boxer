@@ -8,8 +8,8 @@ var Collector = require('../lib/boxer/collector').Collector
 
 var collector = new Collector( options.input
                              , options.output
-                             , PostProcessor
                              , PreProcessor
+                             , PostProcessor
                              , options
                              )
 collector.run()
