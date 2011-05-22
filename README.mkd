@@ -9,9 +9,9 @@ Boxer is a static site publisher.
 
 ## What is a static site publisher? ##
 
-By now lots of people are familiar with the notion of a static blog publishing tool, popularized by tools like jekyll. I think that they're far and away the easiest, most robust means of publishing content in the modern era. In particular when coupled with support tools like GIT or HG. But I kept finding times when what I wanted was not easily stuck into the idea of a blog. Instead I wanted to publish static sites.
+By now lots of people are familiar with the notion of a static blog publishing tool, popularized by tools like Jekyll. They've proved to be an easy and robust means of publishing content. In particular when coupled with support tools like Git or Mercurial.
 
-For example, I wanted my site to publish my resume, a list of projects, and a landing page. But accomplishing that with the current set of tools proved difficult. Boxer imparts few if any of those restritions on you.
+Boxer derives from these tools, and is simply my own take on how best to construct a generalized version. 
 
 ## How Boxer Works ##
 
@@ -20,12 +20,12 @@ For example, I wanted my site to publish my resume, a list of projects, and a la
       |
       V
 
-    Collection: files -> input_handlers -> items
+    Collection: files -> pre processors -> items
 
       |
       V
 
-    Processing: preProcessing -> output_handlers -> postProcessing -> items
+    Processing: items -> post processors -> items
 
       |
       V
