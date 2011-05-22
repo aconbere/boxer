@@ -12,10 +12,10 @@
 , "bin" : { "boxer" : "./bin/boxer.js" }
 , "engines" : { "node" : ">=0.2.0" }
 , "licenses" : [ { "type" : "MIT" } ]
-, "dependencies": { "optparse": "1.0.1"
-                  , "file": "0.1.1"
-                  , "yaml": "0.1.0"
-                  , "markdown": "0.1.2"
+, "dependencies": { "optparse": ">=1.0.1"
+                  , "file": ">=0.1.1"
+                  , "yaml": ">=0.1.0"
+                  , "markdown": ">=0.1.2"
                   , "mustache": "0.3.1-dev"
                   }
 }
