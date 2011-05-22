@@ -1,7 +1,10 @@
 var sys = require('sys')
-var path = require('path')
 var optparse = require('optparse')
+var path = require('path')
 var file = require('file')
+var fs = require('fs')
+var yaml = require("yaml")
+var boxer = require("../lib/boxer")
 
 var options = { "input": null
               , "output": null
@@ -24,19 +27,19 @@ parser.on('help', function() {
   process.exit()
 })
 
-parser.on(2, function(val) {
-  val = file.path.join(process.cwd(), val)
-  path.exists(val, function(exists) {
+parser.on(2, function(inputPath) {
+  inputPath = file.path.join(process.cwd(), inputPath)
+  path.exists(inputPath, function(exists) {
     if(!exists) {
-      sys.puts("Input path " + val + " does not exist")
+      sys.puts("Input path " + inputPath + " does not exist")
       parser.halt()
     }
   })
-  options.input = val
+  options.input = inputPath
 })
 
-parser.on(3, function(val) {
-  options.output = file.path.join(process.cwd(), val)
+parser.on(3, function(outputPath) {
+  options.output = file.path.join(process.cwd(), outputPath)
 })
 
 parser.on('verbose', function() {
@@ -50,5 +53,7 @@ if (!options.input || !options.output) {
   process.exit()
 }
 
+var configPath = path.join(options.input, "_config.yml")
+boxer.utils.merge(options, yaml.eval(fs.readFileSync(configPath, "utf8")))
+
 exports.options = options
-exports.parser = parser
