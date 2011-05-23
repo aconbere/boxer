@@ -54,6 +54,8 @@ if (!options.input || !options.output) {
 }
 
 var configPath = path.join(options.input, "_config.yml")
-boxer.utils.merge(options, yaml.eval(fs.readFileSync(configPath, "utf8")))
+try {
+  boxer.utils.merge(options, yaml.eval(fs.readFileSync(configPath, "utf8")))
+} catch (e) {}
 
 exports.options = options
