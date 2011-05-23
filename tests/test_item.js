@@ -2,12 +2,12 @@ var Item = require("../lib/boxer/item").Item
 
 exports.test_Item_extension = function (test) {
   var item = new Item("file/path.mkd", "/test")
-  test.equal(".mkd", item.extension())
+  test.equal("mkd", item.extension())
   test.done()
 }
 exports.test_Item_mapping_should_return_extension_if_supported = function (test) {
   var item = new Item("file/path.mkd", "/test")
-  test.equal(".mkd", item.mapping())
+  test.equal("mkd", item.mapping())
   test.done()
 }
 
@@ -38,9 +38,8 @@ exports.test_Item_context = function (test) {
 }
 
 exports.test_Item_outputFile = function (test) {
-  var item = new Item()
-  item.outputPath = "test"
-  test.equal("/directory/path/test", item.outputFile("/directory/path")) 
+  var item = new Item("file/path.mkd", "/input/path/")
+  test.equal("/directory/path/file/path.mkd", item.outputFile("/directory/path")) 
   test.done()
 }
 
