@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var sys = require('sys')
+var util = require('util')
 var options = require('./options').options
 var PostProcessor = require("../lib/boxer/post_processor").PostProcessor
 var PreProcessor = require("../lib/boxer/pre_processor").PreProcessor

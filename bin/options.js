@@ -1,4 +1,4 @@
-var sys = require('sys')
+var util = require('util')
 var optparse = require('optparse')
 var path = require('path')
 var file = require('file')
@@ -23,7 +23,7 @@ var description =
 "reasonable defaults for what filters to apply based on directory names"
 
 parser.on('help', function() {
-  sys.puts(banner + "\n\n" + description)
+  util.puts(banner + "\n\n" + description)
   process.exit()
 })
 
@@ -31,7 +31,7 @@ parser.on(2, function(inputPath) {
   inputPath = file.path.join(process.cwd(), inputPath)
   path.exists(inputPath, function(exists) {
     if(!exists) {
-      sys.puts("Input path " + inputPath + " does not exist")
+      util.puts("Input path " + inputPath + " does not exist")
       parser.halt()
     }
   })
@@ -49,7 +49,7 @@ parser.on('verbose', function() {
 parser.parse(process.argv)
 
 if (!options.input || !options.output) {
-  sys.puts(banner)
+  util.puts(banner)
   process.exit()
 }
 
