@@ -29,7 +29,7 @@ parser.on('help', function() {
 
 parser.on(2, function(inputPath) {
   inputPath = file.path.join(process.cwd(), inputPath)
-  path.exists(inputPath, function(exists) {
+  fs.exists(inputPath, function(exists) {
     if(!exists) {
       sys.puts("Input path " + inputPath + " does not exist")
       parser.halt()
